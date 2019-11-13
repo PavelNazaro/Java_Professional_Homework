@@ -3,5 +3,7 @@ package Lesson1;
 public interface IMethods {
     void swapArr();
 
-    void display();
+    void displayArr();
+
+    void createArrayList();
 }

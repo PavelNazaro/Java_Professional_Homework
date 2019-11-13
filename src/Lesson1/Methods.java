@@ -1,5 +1,7 @@
 package Lesson1;
 
+import java.util.ArrayList;
+
 public class Methods implements IMethods{
     private int[] task1Arr;
 
@@ -9,18 +11,27 @@ public class Methods implements IMethods{
 
     @Override
     public void swapArr() {
-        display();
+        displayArr();
         int a = task1Arr[1];
         task1Arr[1] = task1Arr[2];
         task1Arr[2] = a;
-        display();
+        displayArr();
     }
 
     @Override
-    public void display() {
+    public void displayArr() {
         for (int i = 0; i < task1Arr.length; i++) {
             System.out.print(task1Arr[i]);
         }
         System.out.println();
+    }
+
+    @Override
+    public void createArrayList(){
+        ArrayList<Integer> list = new ArrayList<>();
+        for (Integer integer: task1Arr) {
+            list.add(integer);
+        }
+        System.out.println(list);
     }
 }
