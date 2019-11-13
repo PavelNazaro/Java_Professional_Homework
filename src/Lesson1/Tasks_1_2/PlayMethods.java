@@ -1,4 +1,4 @@
-package Lesson1;
+package Lesson1.Tasks_1_2;
 
 public class PlayMethods{
     public static void main(String[] args) {
@@ -11,5 +11,8 @@ public class PlayMethods{
         //Task2
         System.out.println("Task2:");
         arr.createArrayList();
+
+        //Task3
+        System.out.println("Task3:");
     }
 }
