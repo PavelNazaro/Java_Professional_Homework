@@ -69,7 +69,7 @@ public class Main extends Application {
 
     private static void connection() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
-        conn = DriverManager.getConnection("jdbc:sqlite:mainDB.db");
+        conn = DriverManager.getConnection("jdbc:sqlite:src/Lesson2/mainDB.db");
         stmt = conn.createStatement();
     }
 
