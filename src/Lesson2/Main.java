@@ -67,16 +67,6 @@ public class Main extends Application {
         }
     }
 
-    private static void connection() throws ClassNotFoundException, SQLException {
-        Class.forName("org.sqlite.JDBC");
-        conn = DriverManager.getConnection("jdbc:sqlite:src/Lesson2/mainDB.db");
-        stmt = conn.createStatement();
-    }
-
-    private static void disconnect() throws SQLException {
-        conn.close();
-    }
-
     public static void replaceLogin(String login, String newLogin) throws SQLException {
         try {
             connection();
@@ -85,6 +75,8 @@ public class Main extends Application {
         }
 
         stmt.executeUpdate("UPDATE auth SET login = '" + newLogin + "' WHERE login = '" + login + "';");
+
+        disconnect();
     }
 
     @Override
@@ -102,5 +94,15 @@ public class Main extends Application {
         controller.globalVBox.setMinWidth(300);
 //        stage.setOnHidden(e -> controller.shutdown());
         stage.show();
+    }
+
+    private static void connection() throws ClassNotFoundException, SQLException {
+        Class.forName("org.sqlite.JDBC");
+        conn = DriverManager.getConnection("jdbc:sqlite:src/Lesson2/mainDB.db");
+        stmt = conn.createStatement();
+    }
+
+    private static void disconnect() throws SQLException {
+        conn.close();
     }
 }
