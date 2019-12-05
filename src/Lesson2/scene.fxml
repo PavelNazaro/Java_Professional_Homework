@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="globalVBox" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Lesson2.PrimaryController">
+    <MenuBar fx:id="menuBar">
+        <menus>
+            <Menu text="File">
+                <items>
+                    <MenuItem onAction="#handleExitAction" text="Exit" />
+                </items>
+            </Menu>
+            <Menu text="Help">
+                <items>
+                    <MenuItem onAction="#handleAboutAction" text="About" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+    <StackPane>
+        <BorderPane fx:id="authBorderPane">
+            <center>
+                <VBox>
+                    <Label text="Login:" />
+                    <TextField fx:id="loginField" onAction="#signIn" prefWidth="240" />
+                    <Label text="Password:" />
+                    <PasswordField fx:id="passField" onAction="#signIn" prefWidth="240" />
+                    <Button fx:id="btnAuth" minWidth="80" onAction="#signIn" text="Sign in" />
+                </VBox>
+            </center>
+        </BorderPane>
+        <BorderPane fx:id="defaultBorderPane" visible="false">
+            <center>
+                <VBox>
+                    <Label fx:id="labelInfo" text="Auth Successful!" />
+                    <Label fx:id="labelLogin" text="Auth Successful!" />
+                    <Button fx:id="btnStartReplaceLogin" minWidth="80" onAction="#startReplaceLogin" text="Сменить логин" />
+               <Group fx:id="groupReplaceLogin" visible="false">
+                  <children>
+                          <Label text="Введите новый логин:" />
+                          <TextField fx:id="newLoginField" layoutY="16.0" onAction="#replaceLogin" prefWidth="240" />
+                          <Button fx:id="btnReplaceLogin" layoutY="42.0" minWidth="80" onAction="#replaceLogin" text="Сменить" />
+                  </children>
+               </Group>
+                </VBox>
+            </center>
+        </BorderPane>
+    </StackPane>
+</VBox>
